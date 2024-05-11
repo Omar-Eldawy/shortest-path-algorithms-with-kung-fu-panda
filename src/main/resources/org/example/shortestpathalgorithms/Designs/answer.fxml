@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.shortestpathalgorithms.Controllers.AlgorithmsController">
+   <children>
+      <ImageView fitHeight="665.0" fitWidth="801.0" layoutX="-100.0" layoutY="-82.66666666666667" pickOnBounds="true" AnchorPane.bottomAnchor="-82.0" AnchorPane.leftAnchor="-100.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-83.0">
+         <image>
+            <Image url="@../Pictures/results.jpeg" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="outPutField" editable="false" layoutX="76.0" layoutY="385.0" prefHeight="104.0" prefWidth="551.0" style="-fx-border-color: black; -fx-border-radius: 7px; -fx-background-radius: 7px; -fx-border-width: 3px;">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#backToChoices" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #63625e; -fx-background-radius: 8px;" text="Back" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <VBox alignment="BOTTOM_LEFT" layoutX="16.0" layoutY="148.0" prefHeight="204.0" prefWidth="333.0" spacing="25.0">
+         <children>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="25.0" prefWidth="229.0" spacing="7.0">
+               <children>
+                  <Spinner fx:id="startNodeSpinner" editable="true" prefHeight="31.0" prefWidth="115.0" />
+                  <Label fx:id="startLabel" contentDisplay="CENTER" prefHeight="31.0" prefWidth="71.0" style="-fx-background-color: #7a431c; -fx-background-radius: 5px;" text="Start" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="18.0" right="5.0" top="2.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="submitButton" mnemonicParsing="false" onMouseClicked="#readStartNode" prefHeight="23.0" prefWidth="69.0" style="-fx-background-color: skyblue; -fx-background-radius: 7px; -fx-border-radius: 7px; -fx-border-color: black; -fx-border-width: 2px;" text="Submit" textAlignment="CENTER" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="253.0" spacing="7.0">
+               <children>
+                  <ComboBox fx:id="chosenMethod" prefHeight="31.0" prefWidth="114.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <Label fx:id="methodsLabel" contentDisplay="CENTER" prefHeight="37.0" prefWidth="155.0" style="-fx-background-color: #7a431c; -fx-background-radius: 5px;" text="Ancient Techniques" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="7.0" right="5.0" top="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="253.0" spacing="7.0">
+               <children>
+                  <Spinner fx:id="destinationNodeSpinner" editable="true" prefHeight="33.0" prefWidth="112.0">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </Spinner>
+                  <Label fx:id="destinationLabel" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #7a431c; -fx-background-radius: 5px;" text="Destination" textAlignment="CENTER" textFill="#090909">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="40.0" right="5.0" top="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <Button fx:id="solveButton" mnemonicParsing="false" onMouseClicked="#solve" prefHeight="25.0" prefWidth="189.0" style="-fx-background-color: skyblue; -fx-background-radius: 99px; -fx-border-color: #3c496b; -fx-border-radius: 8px; -fx-border-width: 2px;" text="Give me your wisdom" textFill="#020202">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+      <Label fx:id="OogwayLabel" layoutX="352.0" layoutY="96.0" prefHeight="104.0" prefWidth="233.0" style="-fx-background-color: white; -fx-background-radius: 7px; -fx-border-color: black; -fx-background-radius: 7px; -fx-border-width: 2px;" text="You must tell me where to start" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="resetButton" layoutX="371.0" layoutY="208.0" mnemonicParsing="false" onMouseClicked="#reset" prefHeight="33.0" prefWidth="196.0" style="-fx-border-color: black; -fx-background-color: skyblue; -fx-background-radius: 8px; -fx-border-radius: 8px; -fx-border-width: 2px;" text="Tell me if you reset your mind" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
